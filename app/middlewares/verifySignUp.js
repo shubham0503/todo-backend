@@ -7,12 +7,12 @@ checkDuplicateEmail = (req, res, next) => {
     email: req.body.email
   }).exec((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.status(500).send({ status: 500, message: err });
       return;
     }
 
     if (user) {
-      res.status(400).send({ message: "The email address you have entered is already associated with another account." });
+      res.status(400).send({ status: 400, message: "The email address you have entered is already associated with another account." });
       return;
     }
 
