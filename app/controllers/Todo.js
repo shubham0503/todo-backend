@@ -35,7 +35,9 @@ exports.todo = (req, res) => {
           }
 
           res.status(200).send({
-            message: "Todo created successfully!"
+            status: 200,
+            message: "Todo created successfully!",
+            data: todo
           });
         });
       }
